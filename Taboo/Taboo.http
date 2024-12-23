@@ -1,0 +1,6 @@
+@Taboo_HostAddress = http://localhost:5228
+
+GET {{Taboo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
