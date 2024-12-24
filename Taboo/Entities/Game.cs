@@ -10,8 +10,8 @@
         public int Time { get; set; }
         public int? SuccesAnswer { get; set; }
         public int? WrongAnswer { get; set; }
-        public string LanguageCode { get; set; }
-        public Language Language { get; set; }
+        public string LanguageCode { get; set; } = null!;
+        public Language Language { get; set; } = null!;
 
 
     }

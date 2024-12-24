@@ -18,7 +18,18 @@ namespace Taboo.Service.Implements
                 throw new WordLanguageNotFoundException();
             if (await _context.Words.AnyAsync(x => x.Text.ToUpper() == dto.Text.ToUpper()))
                 throw new WordExistException();
-            await _context.Words.AddAsync(_mapper.Map<Word>(dto));
+            Word word = new Word
+             { 
+                Text = dto.Text,
+                LanguageCode = dto.LanguageCode, 
+                BannedWords = dto.BannedWords.Select(x=> new BannedWord
+                {
+                    Text= x
+                }).ToList(),
+            
+            };
+                
+            await _context.Words.AddAsync(word );
             await _context.SaveChangesAsync();
         }
 

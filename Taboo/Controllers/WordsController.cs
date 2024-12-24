@@ -47,6 +47,40 @@ namespace Taboo.Controllers
                 }
             }
         }
+        [HttpPost("[action]")]
+        public async Task<IActionResult> CreateMany(List<WordCreateDto> dto)
+        {
+            try
+            {
+                foreach (var item in dto)
+                {
+                    
+                    await _service.CreateAsync(item);
+                }
+                return Ok();
+
+            }
+            catch (Exception ex)
+            {
+
+                if (ex is IBaseException bEx)
+                {
+                    return StatusCode(bEx.StatusCode, new
+                    {
+                        StatusCode = bEx.StatusCode,
+                        Message = bEx.ErrorMessage
+                    });
+                }
+                else
+                {
+                    return BadRequest(new
+                    {
+                        ex.Message,
+                    });
+
+                }
+            }
+        }
         [HttpDelete]
         public async Task<IActionResult> Delete(WordDeleteDto dto) 
         {

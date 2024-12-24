@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Taboo.Controllers
 {
@@ -18,13 +17,16 @@ namespace Taboo.Controllers
             return Ok();
         }
         [HttpDelete]
-        public async Task<IActionResult> Delete()
+        public async Task<IActionResult> Start()
         {
             return Ok();
         }
 
+
+
+
         [HttpPut]
-        public async Task<IActionResult> Update()
+        public async Task<IActionResult> End()
         {
             return Ok();
         }

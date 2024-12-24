@@ -19,6 +19,11 @@ namespace Taboo.Validators.Word
                 .NotNull()
                 .WithMessage("LanguageCode Null Ola Bilmez")
                 .Length(2);
+            RuleForEach(x => x.BannedWords)
+                .Length(2);
+            RuleFor(x => x.BannedWords)
+                .Must(x=> x.Count==6)
+                .WithMessage("There is must be 6 Banned Word");    
         }
     }
 }
