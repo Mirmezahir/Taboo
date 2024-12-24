@@ -6,20 +6,33 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Taboo.Migrations
 {
     /// <inheritdoc />
-    public partial class CreatedTables : Migration
+    public partial class mg : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Game",
+                name: "Languages",
+                columns: table => new
+                {
+                    Code = table.Column<string>(type: "nchar(2)", fixedLength: true, maxLength: 2, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(32)", maxLength: 32, nullable: false),
+                    Icon = table.Column<string>(type: "nvarchar(124)", maxLength: 124, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Languages", x => x.Code);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Games",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     BannedWordCount = table.Column<int>(type: "int", nullable: false),
                     FailCount = table.Column<int>(type: "int", nullable: false),
                     SkipCount = table.Column<int>(type: "int", nullable: false),
-                    Score = table.Column<int>(type: "int", nullable: false),
+                    Score = table.Column<int>(type: "int", nullable: true),
                     Time = table.Column<int>(type: "int", nullable: false),
                     SuccesAnswer = table.Column<int>(type: "int", nullable: true),
                     WrongAnswer = table.Column<int>(type: "int", nullable: true),
@@ -27,9 +40,9 @@ namespace Taboo.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Game", x => x.Id);
+                    table.PrimaryKey("PK_Games", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Game_Languages_LanguageCode",
+                        name: "FK_Games_Languages_LanguageCode",
                         column: x => x.LanguageCode,
                         principalTable: "Languages",
                         principalColumn: "Code",
@@ -37,7 +50,7 @@ namespace Taboo.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Word",
+                name: "Words",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -47,9 +60,9 @@ namespace Taboo.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Word", x => x.Id);
+                    table.PrimaryKey("PK_Words", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Word_Languages_LanguageCode",
+                        name: "FK_Words_Languages_LanguageCode",
                         column: x => x.LanguageCode,
                         principalTable: "Languages",
                         principalColumn: "Code",
@@ -57,7 +70,7 @@ namespace Taboo.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "BannedWord",
+                name: "BannedWords",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -67,28 +80,34 @@ namespace Taboo.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BannedWord", x => x.Id);
+                    table.PrimaryKey("PK_BannedWords", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_BannedWord_Word_WordId",
+                        name: "FK_BannedWords_Words_WordId",
                         column: x => x.WordId,
-                        principalTable: "Word",
+                        principalTable: "Words",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_BannedWord_WordId",
-                table: "BannedWord",
+                name: "IX_BannedWords_WordId",
+                table: "BannedWords",
                 column: "WordId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Game_LanguageCode",
-                table: "Game",
+                name: "IX_Games_LanguageCode",
+                table: "Games",
                 column: "LanguageCode");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Word_LanguageCode",
-                table: "Word",
+                name: "IX_Languages_Name",
+                table: "Languages",
+                column: "Name",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Words_LanguageCode",
+                table: "Words",
                 column: "LanguageCode");
         }
 
@@ -96,13 +115,16 @@ namespace Taboo.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "BannedWord");
+                name: "BannedWords");
 
             migrationBuilder.DropTable(
-                name: "Game");
+                name: "Games");
 
             migrationBuilder.DropTable(
-                name: "Word");
+                name: "Words");
+
+            migrationBuilder.DropTable(
+                name: "Languages");
         }
     }
 }

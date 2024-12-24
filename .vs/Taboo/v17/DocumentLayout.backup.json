@@ -1,10 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\HUAWEI\\source\\repos\\Taboo\\",
+  "WorkspaceRootPath": "C:\\Users\\HUAWEI\\OneDrive\\Desktop\\Tabo\\Taboo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{093AAFDD-DD95-475B-891C-02FF32B669E8}|Taboo\\Taboo.csproj|c:\\users\\huawei\\source\\repos\\taboo\\taboo\\controllers\\bannedwordscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{093AAFDD-DD95-475B-891C-02FF32B669E8}|Taboo\\Taboo.csproj|solutionrelative:taboo\\controllers\\bannedwordscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{093AAFDD-DD95-475B-891C-02FF32B669E8}|Taboo\\Taboo.csproj|c:\\users\\huawei\\onedrive\\desktop\\tabo\\taboo\\taboo\\service\\implements\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093AAFDD-DD95-475B-891C-02FF32B669E8}|Taboo\\Taboo.csproj|solutionrelative:taboo\\service\\implements\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{093AAFDD-DD95-475B-891C-02FF32B669E8}|Taboo\\Taboo.csproj|c:\\users\\huawei\\onedrive\\desktop\\tabo\\taboo\\taboo\\controllers\\gamescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093AAFDD-DD95-475B-891C-02FF32B669E8}|Taboo\\Taboo.csproj|solutionrelative:taboo\\controllers\\gamescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{093AAFDD-DD95-475B-891C-02FF32B669E8}|Taboo\\Taboo.csproj|c:\\users\\huawei\\onedrive\\desktop\\tabo\\taboo\\taboo\\service\\abstracts\\igameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093AAFDD-DD95-475B-891C-02FF32B669E8}|Taboo\\Taboo.csproj|solutionrelative:taboo\\service\\abstracts\\igameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{093AAFDD-DD95-475B-891C-02FF32B669E8}|Taboo\\Taboo.csproj|c:\\users\\huawei\\onedrive\\desktop\\tabo\\taboo\\taboo\\dtos\\gamedto\\gamestatusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093AAFDD-DD95-475B-891C-02FF32B669E8}|Taboo\\Taboo.csproj|solutionrelative:taboo\\dtos\\gamedto\\gamestatusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{093AAFDD-DD95-475B-891C-02FF32B669E8}|Taboo\\Taboo.csproj|c:\\users\\huawei\\onedrive\\desktop\\tabo\\taboo\\taboo\\profiles\\gameprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093AAFDD-DD95-475B-891C-02FF32B669E8}|Taboo\\Taboo.csproj|solutionrelative:taboo\\profiles\\gameprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +30,75 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BannedWordsController.cs",
-              "DocumentMoniker": "C:\\Users\\HUAWEI\\source\\repos\\Taboo\\Taboo\\Controllers\\BannedWordsController.cs",
-              "RelativeDocumentMoniker": "Taboo\\Controllers\\BannedWordsController.cs",
-              "ToolTip": "C:\\Users\\HUAWEI\\source\\repos\\Taboo\\Taboo\\Controllers\\BannedWordsController.cs*",
-              "RelativeToolTip": "Taboo\\Controllers\\BannedWordsController.cs*",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAmwAwAAAARAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "GamesController.cs",
+              "DocumentMoniker": "C:\\Users\\HUAWEI\\OneDrive\\Desktop\\Tabo\\Taboo\\Taboo\\Controllers\\GamesController.cs",
+              "RelativeDocumentMoniker": "Taboo\\Controllers\\GamesController.cs",
+              "ToolTip": "C:\\Users\\HUAWEI\\OneDrive\\Desktop\\Tabo\\Taboo\\Taboo\\Controllers\\GamesController.cs*",
+              "RelativeToolTip": "Taboo\\Controllers\\GamesController.cs*",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T19:52:27.756Z",
+              "WhenOpened": "2024-12-24T19:53:18.215Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameService.cs",
+              "DocumentMoniker": "C:\\Users\\HUAWEI\\OneDrive\\Desktop\\Tabo\\Taboo\\Taboo\\Service\\Implements\\GameService.cs",
+              "RelativeDocumentMoniker": "Taboo\\Service\\Implements\\GameService.cs",
+              "ToolTip": "C:\\Users\\HUAWEI\\OneDrive\\Desktop\\Tabo\\Taboo\\Taboo\\Service\\Implements\\GameService.cs*",
+              "RelativeToolTip": "Taboo\\Service\\Implements\\GameService.cs*",
+              "ViewState": "AgIAABsAAAAAAAAAAAAmwDkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T19:48:56.466Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IGameService.cs",
+              "DocumentMoniker": "C:\\Users\\HUAWEI\\OneDrive\\Desktop\\Tabo\\Taboo\\Taboo\\Service\\Abstracts\\IGameService.cs",
+              "RelativeDocumentMoniker": "Taboo\\Service\\Abstracts\\IGameService.cs",
+              "ToolTip": "C:\\Users\\HUAWEI\\OneDrive\\Desktop\\Tabo\\Taboo\\Taboo\\Service\\Abstracts\\IGameService.cs*",
+              "RelativeToolTip": "Taboo\\Service\\Abstracts\\IGameService.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T19:45:53.11Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GameProfile.cs",
+              "DocumentMoniker": "C:\\Users\\HUAWEI\\OneDrive\\Desktop\\Tabo\\Taboo\\Taboo\\Profiles\\GameProfile.cs",
+              "RelativeDocumentMoniker": "Taboo\\Profiles\\GameProfile.cs",
+              "ToolTip": "C:\\Users\\HUAWEI\\OneDrive\\Desktop\\Tabo\\Taboo\\Taboo\\Profiles\\GameProfile.cs*",
+              "RelativeToolTip": "Taboo\\Profiles\\GameProfile.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T19:47:37.951Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GameStatusDto.cs",
+              "DocumentMoniker": "C:\\Users\\HUAWEI\\OneDrive\\Desktop\\Tabo\\Taboo\\Taboo\\DTOs\\GameDto\\GameStatusDto.cs",
+              "RelativeDocumentMoniker": "Taboo\\DTOs\\GameDto\\GameStatusDto.cs",
+              "ToolTip": "C:\\Users\\HUAWEI\\OneDrive\\Desktop\\Tabo\\Taboo\\Taboo\\DTOs\\GameDto\\GameStatusDto.cs",
+              "RelativeToolTip": "Taboo\\DTOs\\GameDto\\GameStatusDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T20:13:43.016Z",
               "EditorCaption": ""
             },
             {

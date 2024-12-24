@@ -74,12 +74,18 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Taboo.DTOs.GameDto.GameCreateDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "Taboo.Controllers.GamesController",
-    "Method": "Delete",
+    "Method": "Start",
     "RelativePath": "api/Games",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -89,7 +95,7 @@
   },
   {
     "ContainingType": "Taboo.Controllers.GamesController",
-    "Method": "Update",
+    "Method": "End",
     "RelativePath": "api/Games",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -208,6 +214,22 @@
       {
         "Name": "dto",
         "Type": "Taboo.DTOs.WordDTO.WordUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Taboo.Controllers.WordsController",
+    "Method": "CreateMany",
+    "RelativePath": "api/Words/CreateMany",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "System.Collections.Generic.List\u00601[[Taboo.DTOs.WordDTO.WordCreateDto, Taboo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],

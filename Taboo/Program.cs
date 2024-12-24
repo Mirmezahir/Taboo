@@ -12,6 +12,7 @@ namespace Taboo
     {
         public static void Main(string[] args)
         {
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -21,6 +22,7 @@ namespace Taboo
             builder.Services.AddScoped<ILAnguageService, LanguageService>();
             builder.Services.AddScoped<IWordService, WordService>();
             builder.Services.AddScoped<IBannedWordService, BannedWordService>();
+            builder.Services.AddScoped<IGameService, GameService>();
             builder.Services.AddAutoMapper(typeof(Program));
             builder.Services.AddFluentValidationAutoValidation();
             builder.Services.AddValidatorsFromAssemblyContaining<Program>();

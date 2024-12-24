@@ -41,7 +41,7 @@ namespace Taboo.Migrations
 
                     b.HasIndex("WordId");
 
-                    b.ToTable("BannedWord");
+                    b.ToTable("BannedWords");
                 });
 
             modelBuilder.Entity("Taboo.Entities.Game", b =>
@@ -60,7 +60,7 @@ namespace Taboo.Migrations
                         .IsRequired()
                         .HasColumnType("nchar(2)");
 
-                    b.Property<int>("Score")
+                    b.Property<int?>("Score")
                         .HasColumnType("int");
 
                     b.Property<int>("SkipCount")
@@ -79,7 +79,7 @@ namespace Taboo.Migrations
 
                     b.HasIndex("LanguageCode");
 
-                    b.ToTable("Game");
+                    b.ToTable("Games");
                 });
 
             modelBuilder.Entity("Taboo.Entities.Language", b =>
@@ -128,7 +128,7 @@ namespace Taboo.Migrations
 
                     b.HasIndex("LanguageCode");
 
-                    b.ToTable("Word");
+                    b.ToTable("Words");
                 });
 
             modelBuilder.Entity("Taboo.Entities.BannedWord", b =>

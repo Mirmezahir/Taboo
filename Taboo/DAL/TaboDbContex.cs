@@ -8,6 +8,7 @@ namespace Taboo.DAL
         
         public TaboDbContex(DbContextOptions options) : base(options)
         {
+                    
         }
         public DbSet<Language> Languages { get; set; }  
         public DbSet<Word> Words { get; set; }  
