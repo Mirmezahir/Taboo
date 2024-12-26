@@ -19,10 +19,7 @@ namespace Taboo
 
             builder.Services.AddControllers();
             builder.Services.AddDbContext<TaboDbContex>(s => s.UseSqlServer(builder.Configuration.GetConnectionString("MSSql")));
-            builder.Services.AddScoped<ILAnguageService, LanguageService>();
-            builder.Services.AddScoped<IWordService, WordService>();
-            builder.Services.AddScoped<IBannedWordService, BannedWordService>();
-            builder.Services.AddScoped<IGameService, GameService>();
+            builder.Services.AddServices(); 
             builder.Services.AddAutoMapper(typeof(Program));
             builder.Services.AddFluentValidationAutoValidation();
             builder.Services.AddValidatorsFromAssemblyContaining<Program>();
