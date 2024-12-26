@@ -11,7 +11,7 @@ namespace Taboo.Service.Abstracts
     
         Task<WordForGameDto> Skip(Guid id);
         Task Fail(Guid id);
-        Task End(Guid id);
+        Task<GameEndDto> End(Guid id);
         Task Succsess(Guid id); 
 
     }

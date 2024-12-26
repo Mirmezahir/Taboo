@@ -59,18 +59,8 @@
   },
   {
     "ContainingType": "Taboo.Controllers.GamesController",
-    "Method": "Get",
-    "RelativePath": "api/Games",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Taboo.Controllers.GamesController",
     "Method": "Create",
-    "RelativePath": "api/Games",
+    "RelativePath": "api/Games/Create",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -85,22 +75,82 @@
   },
   {
     "ContainingType": "Taboo.Controllers.GamesController",
-    "Method": "Start",
-    "RelativePath": "api/Games",
-    "HttpMethod": "DELETE",
+    "Method": "End",
+    "RelativePath": "api/Games/End",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "Taboo.Controllers.GamesController",
-    "Method": "End",
-    "RelativePath": "api/Games",
+    "Method": "Fail",
+    "RelativePath": "api/Games/Fail",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Taboo.Controllers.GamesController",
+    "Method": "Skip",
+    "RelativePath": "api/Games/Skip",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Taboo.Controllers.GamesController",
+    "Method": "Start",
+    "RelativePath": "api/Games/Start",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Taboo.Controllers.GamesController",
+    "Method": "Succes",
+    "RelativePath": "api/Games/Succes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {

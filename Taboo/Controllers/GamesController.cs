@@ -11,25 +11,42 @@ namespace Taboo.Controllers
     public class GamesController(IGameService _service) : ControllerBase
     { 
 
-        [HttpPost]
+        [HttpPost("[action]")]
         public async Task<IActionResult> Create(GameCreateDto dto)
         {
            
          
             return Ok( await _service.CreateAsync(dto));
         }
-        [HttpPut]
+        [HttpPut("[action]")]
         public async Task<IActionResult> Start(Guid id)
         {
                      
            return Ok(await _service.StartAsync(id));
 
         }
-
-        [HttpGet]
+        [HttpGet("[action]")]
         public async Task<IActionResult> Skip(Guid id)
         {
-            return Ok(_service.Skip(id));
+            return Ok(await _service.Skip(id));
         }
+        [HttpGet("[action]")]
+        public async Task<IActionResult> Fail(Guid id)
+        {
+            await _service.Fail(id);
+            return Ok();
+        }
+        [HttpGet("[action]")]
+        public async Task<IActionResult> Succes(Guid id)
+        {
+            await _service.Succsess(id);
+            return Ok();
+        }
+        [HttpGet("[action]")]
+        public async Task<IActionResult> End(Guid id)
+        {
+            return Ok(await _service.End(id));
+        }
+
     }
 }

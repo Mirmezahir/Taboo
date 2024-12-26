@@ -9,6 +9,7 @@ using Taboo.DTOs.GameDto;
 using Taboo.DTOs.WordDTO;
 using Taboo.Entities;
 using Taboo.Service.Abstracts;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Taboo.Service.Implements
 {
@@ -22,14 +23,26 @@ namespace Taboo.Service.Implements
             return game.Id;
         }
 
-        Task IGameService.End(Guid id)
+        async Task<GameEndDto> IGameService.End(Guid id)
         {
-            throw new NotImplementedException();
+            var result= _getCurrentGame(id);
+            GameEndDto dto = new GameEndDto
+            {
+                Fail = result.Fail,
+                Score = result.Score,
+              
+               
+            };
+            _cache.Remove(id);
+            return dto;
         }
 
-        Task IGameService.Fail(Guid id)
+         Task IGameService.Fail(Guid id)
         {
-            throw new NotImplementedException();
+            var data = _getCurrentGame(id);
+            data.Fail++;
+            _cache.Set(id, data, TimeSpan.FromMinutes(5));
+            return Task.CompletedTask;
         }
 
     
@@ -50,11 +63,8 @@ namespace Taboo.Service.Implements
 
         async Task<WordForGameDto> IGameService.StartAsync(Guid id)
         {
-            var data = await _context.Games.FirstOrDefaultAsync(x => x.Id == id);
-            if (data == null)
-            {
-                throw new Exception();
-            }
+            var data = await _context.Games.FindAsync(id);
+            if (data == null ) throw new Exception();
             IQueryable<Word> query = _context.Words.Where(x => x.LanguageCode == data.LanguageCode);
             var words =  await query.Select(x=> new WordForGameDto
             {
@@ -66,25 +76,42 @@ namespace Taboo.Service.Implements
 
             var wordstack = new Stack<WordForGameDto>(randomWords);
             WordForGameDto Currenword = wordstack.Pop();
-
+            var a = _getCurrentGame(id).UsedWordsId.Count();
             int time = data.Time;
-
-            var dt = new GameStatusDto
-            {
-                Status = 0,
-                Fail = 0,
-                Skip = 0,
-                Words = wordstack,
-                UsedWordsId = words.Select(x => x.Id),
-                MaxSkipCount = data.SkipCount
-            };
-            _cache.Set<GameStatusDto>(id, dt, TimeSpan.FromMinutes(20));
+            if (! _getCurrentGame(id).UsedWordsId.Any() ){
+                var dt = new GameStatusDto
+                {
+                    Status = 0,
+                    Fail = 0,
+                    Skip = 0,
+                    Words = wordstack,
+                    UsedWordsId = words.Select(x => x.Id),
+                    MaxSkipCount = data.SkipCount
+                };
+                _cache.Set<GameStatusDto>(id, dt, TimeSpan.FromMinutes(20));
+            }
             return Currenword;
         }
         GameStatusDto _getCurrentGame(Guid id)
         {
             var result = _cache.Get<GameStatusDto>(id); 
-            if (result == null) throw new Exception();
+            if (result == null)
+            {
+            
+                Stack<WordForGameDto> wordForGameDtos = new();
+                IEnumerable<int> usedWordsId = new List<int>(); 
+                GameStatusDto dto = new GameStatusDto
+                {
+                    Status = 0,
+                    Fail = 0,
+                    Skip = 0,
+                    Words = wordForGameDtos,
+                    UsedWordsId = usedWordsId,
+                    MaxSkipCount = 0
+                };
+                return dto;
+            }
+
             return result;
 
         }
@@ -94,7 +121,11 @@ namespace Taboo.Service.Implements
         Task IGameService.Succsess(Guid id)
         {
 
-            throw new NotImplementedException();
+            var data =_getCurrentGame(id);
+            data.Score++;
+            _cache.Set(id, data, TimeSpan.FromMinutes(5));
+            
+            return Task.CompletedTask;
         }
 
     }
