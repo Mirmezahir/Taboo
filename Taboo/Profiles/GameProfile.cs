@@ -9,7 +9,7 @@ namespace Taboo.Profiles
        public GameProfile() {
            
             CreateMap<GameCreateDto, Game>();
-            CreateMap<GameUpdateDto, Game>();
+         
         }
     }
 }

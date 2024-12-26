@@ -1,4 +1,6 @@
-﻿using Taboo.Entities;
+﻿using System.Reflection.Metadata.Ecma335;
+using Taboo.DTOs.WordDTO;
+using Taboo.Entities;
 
 namespace Taboo.DTOs.GameDto
 {
@@ -6,9 +8,11 @@ namespace Taboo.DTOs.GameDto
     {
         public byte Status { get; set; }
         public byte Fail { get; set; }
+        public byte Score { get; set; }
         public byte Skip { get; set; }
-        public Stack<Word> Words { get; set; }
-        public int[] UsedWordsId { get; set; }  
+        public  int  MaxSkipCount { get; set; }
+        public Stack<WordForGameDto> Words { get; set; }
+        public IEnumerable<int> UsedWordsId { get; set; }  
 
     }
 }
