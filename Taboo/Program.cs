@@ -36,6 +36,7 @@ namespace Taboo
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+            app.UseTaboExceptionHandler();
 
             app.UseHttpsRedirection();
 
